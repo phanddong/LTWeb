@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PDD.SachOnline.Models.NHAXUATBAN>
+<ul class="list-group">
+    <li class="list-group-item active" style="font-weight:bold; text-align:center">MÔ HÌNH THEO NHÀ XUẤT BẢN</li>
+    @foreach (var item in Model)
+    {
+<a href="@Url.Action("SachTheoNhaXuatBan", "SachOnline", new { MaNXB = item.MaNXB })" class="list-group-item">@item.TenNXB</a>}
+
+
+</ul>

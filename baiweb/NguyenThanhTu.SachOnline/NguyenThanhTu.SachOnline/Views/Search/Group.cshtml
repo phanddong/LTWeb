@@ -1,0 +1,31 @@
+﻿@model IEnumerable<IGrouping<int?, PDD.SachOnline.Models.SACH>>
+@{
+    ViewBag.Title = "Group";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>DANH SÁCH THEO ANIME</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4 style="font-weight: bold; color: red;">
+            MÃ MÔ HÌNH @item.Key;
+        </h4>
+        <table boder="1">
+            <tr style="background-color:burlywood; font-weight:bold">
+                <td>Mã mô hình</td>
+                <td>Tên mô hình</td>
+            
+            </tr>      
+            @foreach (var sach in item)
+                {
+                    <tr>
+                        <td>@sach.MaSach</td>
+                        <td>@sach.TenSach</td>
+                      
+                    </tr>
+                }
+        </table>
+    </div>
+}
